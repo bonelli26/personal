@@ -50,7 +50,7 @@ function getMDXData(dir) {
 }
 
 export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'))
+  return getMDXData(path.join(process.cwd(), 'app', 'work', 'posts'))
 }
 
 export function formatDate(date: string, includeRelative = false) {
@@ -62,7 +62,7 @@ export function formatDate(date: string, includeRelative = false) {
 
   let yearsAgo = currentDate.getFullYear() - targetDate.getFullYear()
   let monthsAgo = currentDate.getMonth() - targetDate.getMonth()
-  let daysAgo = currentDate.getDate() - targetDate.getDate()
+  // let daysAgo = currentDate.getDate() - targetDate.getDate()
 
   let formattedDate = ''
 
@@ -70,15 +70,15 @@ export function formatDate(date: string, includeRelative = false) {
     formattedDate = `${yearsAgo}y ago`
   } else if (monthsAgo > 0) {
     formattedDate = `${monthsAgo}mo ago`
-  } else if (daysAgo > 0) {
-    formattedDate = `${daysAgo}d ago`
+  // } else if (daysAgo > 0) {
+  //   formattedDate = `${daysAgo}d ago`
   } else {
     formattedDate = 'Today'
   }
 
   let fullDate = targetDate.toLocaleString('en-us', {
     month: 'long',
-    day: 'numeric',
+    // day: 'numeric',
     year: 'numeric',
   })
 

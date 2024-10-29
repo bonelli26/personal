@@ -1,8 +1,9 @@
 import fs from 'fs'
 import path from 'path'
 
-type Metadata = {
+type Metadata = {  
   title: string
+  name: string
   publishedAt: string
   summary: string
   image?: string

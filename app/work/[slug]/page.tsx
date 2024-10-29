@@ -19,6 +19,7 @@ export function generateMetadata({ params }) {
 
   let {
     title,
+    name,
     publishedAt: publishedTime,
     summary: description,
     image,
@@ -29,6 +30,7 @@ export function generateMetadata({ params }) {
 
   return {
     title,
+    name,
     description,
     openGraph: {
       title,
@@ -67,13 +69,14 @@ export default function Blog({ params }) {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'BlogPosting',
-            headline: post.metadata.title,
+            headline: post.metadata.title,          
+            workName: post.metadata.name,          
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+              : `/og?name=${encodeURIComponent(post.metadata.name)}`,
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
               '@type': 'Person',
@@ -82,10 +85,13 @@ export default function Blog({ params }) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
+      <p className="text-sm text-neutral-600 dark:text-neutral-400">
         {post.metadata.title}
+      </p>
+      <h1 className="title font-semibold text-2xl tracking-tighter">
+        {post.metadata.name}
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+      <div className="flex justify-between items-center mt-2 mb-8 text-sm">        
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {formatDate(post.metadata.publishedAt)}
         </p>

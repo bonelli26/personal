@@ -48,13 +48,9 @@ html {
 }
 
 .prose a {
-  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+  @apply text-neutral-400 transition-all decoration-neutral-400 dark:decoration-neutral-600;  
 }
 
-.prose .anchor:after {
-  @apply text-neutral-300 dark:text-neutral-700;
-  content: '#';
-}
 
 .prose *:hover > .anchor {
   @apply visible;
@@ -81,14 +77,17 @@ html {
 .prose img {
   /* Don't apply styles to next/image */
   @apply m-0;
+  margin-bottom: 30px;
 }
+
 
 .prose p {
   @apply my-4 text-neutral-800 dark:text-neutral-200;
+  margin-bottom: 30px
 }
 
 .prose h1 {
-  @apply text-4xl font-bold tracking-tight mt-6 mb-2;
+  @apply text-5xl font-bold tracking-tight mt-6 mb-2;
 }
 
 .prose h2 {
@@ -148,3 +147,28 @@ table {
 .title {
   text-wrap: balance;
 }
+
+a {
+  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);  
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a p:hover {
+  text-decoration: underline;
+}
+
+a p {
+  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);  
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.name {
+  margin-bottom: 25px;
+}
+

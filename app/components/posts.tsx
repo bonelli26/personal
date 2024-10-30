@@ -22,12 +22,12 @@ export function BlogPosts() {
             href={`/work/${post.slug}`}
           >
             <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[250px] tabular-nums">
-                {post.metadata.title}
-              </p>
-              <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">                
+              <p className="text-neutral-900 dark:text-neutral-100 w-[150px] tracking-tight">                
                 {post.metadata.name}
               </p>
+              <p className="text-neutral-400 dark:text-neutral-400 w-[250px] tabular-nums">
+                {post.metadata.title}
+              </p>              
             </div>
           </Link>
         ))}

@@ -160,9 +160,10 @@ a p:hover {
   text-decoration: underline;
 }
 
-a p {
+a > p {
   transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);  
 }
+
 
 .title {
   margin-bottom: 20px;
@@ -172,3 +173,24 @@ a p {
   margin-bottom: 25px;
 }
 
+.link-hover {
+  position: relative;
+  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);  
+}
+
+.image {
+  transform: scale(0);  
+  transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);  
+  transform-origin: top left;
+  position: absolute; 
+  left: 0;
+  top: 20px;
+  max-height: 200px;
+  height: auto;
+  width: auto;
+  z-index: 2;
+}
+
+.link-hover:hover .image {
+  transform: scale(100%);
+}

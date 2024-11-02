@@ -48,7 +48,7 @@ html {
 }
 
 .prose a {
-  @apply text-neutral-400 transition-all decoration-neutral-400 dark:decoration-neutral-600;  
+  @apply text-neutral-400 transition-all decoration-neutral-400 dark:decoration-neutral-600;
 }
 
 
@@ -149,19 +149,11 @@ table {
 }
 
 a {
-  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);  
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a p:hover {
-  text-decoration: underline;
+  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 a > p {
-  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);  
+  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -175,14 +167,14 @@ a > p {
 
 .link-hover {
   position: relative;
-  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);  
+  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .image {
-  transform: scale(0);  
-  transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);  
+  transform: scale(0);
+  transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: top left;
-  position: absolute; 
+  position: absolute;
   left: 0;
   top: 20px;
   max-height: 200px;
@@ -191,6 +183,6 @@ a > p {
   z-index: 2;
 }
 
-.link-hover:hover .image {
-  transform: scale(100%);
-}
+/*.link-hover:hover .image {*/
+/*  transform: scale(100%);*/
+/*}*/

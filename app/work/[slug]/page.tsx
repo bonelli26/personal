@@ -69,8 +69,8 @@ export default function Blog({ params }) {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'BlogPosting',
-            headline: post.metadata.title,          
-            workName: post.metadata.name,          
+            headline: post.metadata.title,
+            workName: post.metadata.name,
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
@@ -91,10 +91,11 @@ export default function Blog({ params }) {
       <h1 className="font-semibold text-4xl tracking-tighter name">
         {post.metadata.name}
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">        
+      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
         <p className="text-sm text-neutral-600 dark:text-neutral-400 date">
           {formatDate(post.metadata.publishedAt)}
         </p>
+        <a href={post.metadata.link} target="_blank" className="text-sm text-neutral-600 dark:text-neutral-400 date">View live ↗</a>
       </div>
       <article className="prose">
         <CustomMDX source={post.content} />

@@ -23,6 +23,7 @@ export function generateMetadata({ params }) {
     publishedAt: publishedTime,
     summary: description,
     image,
+    link
   } = post.metadata
   let ogImage = image
     ? image

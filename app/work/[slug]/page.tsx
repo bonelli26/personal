@@ -25,12 +25,13 @@ export function generateMetadata({ params }) {
     image,
     link
   } = post.metadata
+  const fullTitle = name + ' - ' + title
   let ogImage = image
     ? image
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`
 
   return {
-    title,
+    title: fullTitle,
     name,
     description,
     openGraph: {
@@ -92,7 +93,7 @@ export default function Blog({ params }) {
       <h1 className="font-semibold text-4xl tracking-tighter name">
         {post.metadata.name}
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+      <div className="flex justify-between items-center mt-2 text-sm">
         <p className="text-sm text-neutral-600 dark:text-neutral-400 date">
           {formatDate(post.metadata.publishedAt)}
         </p>

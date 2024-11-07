@@ -98,6 +98,13 @@ export default function Blog({ params }) {
         </p>
         <a href={post.metadata.link} target="_blank" className="text-sm text-neutral-600 dark:text-neutral-400 date">View live ↗</a>
       </div>
+      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+        {post.metadata.designCredit ?
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 date">
+              Design: <a href={post.metadata.designCreditLink} target="_blank">{post.metadata.designCredit}</a>
+            </p> :
+        null }
+      </div>
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>
